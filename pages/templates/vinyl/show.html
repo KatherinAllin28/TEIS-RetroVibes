@@ -1,0 +1,19 @@
+{% extends 'pages/base.html' %}
+{% block title %} Vinyls {% endblock %}
+{% block content %}
+<div class="vinyl-card">
+    <div class="vinyl-image">
+        <img src="https://www.pngmart.com/files/6/Vinyl-PNG-Free-Download.png" alt="Vinyl Design">
+    </div>
+    <div class="vinyl-details">
+        <h2>{{ vinyl.name }}</h2>
+        <p><strong>Color:</strong> {{ vinyl.colour }}</p>
+        <p><strong>Size:</strong> {{ vinyl.size }} inches</p>
+        <p><strong>Price:</strong> ${{ vinyl.price }}</p>
+        <a href="{% url 'cart_index' %}">
+            <button class="buy-btn">Add Cart</button>
+        </a>
+        
+    </div>
+</div>
+{% endblock %}

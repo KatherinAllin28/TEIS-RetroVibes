@@ -1,0 +1,19 @@
+@extends('layouts.app')
+{% extends 'pages/base.html' %}
+{% block title %} Vinyls {% endblock %}
+{% block content %}
+<div class="row">
+    {% for vinyl in vinyls %}
+    <div class="col-md-4 col-lg-3 mb-2">
+        <div class="card">
+            <img src="https://www.pngmart.com/files/6/Vinyl-PNG-Free-Download.png" class="card-img-top img-card">
+            <div class="card-body text-center">
+                <a href="{% url 'show' id=vinyl.id %}"
+                    class="btn bg-primary text-white">{{vinyl.name}}
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
