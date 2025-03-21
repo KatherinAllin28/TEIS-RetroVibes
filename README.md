@@ -6,7 +6,7 @@ La plataforma no solo facilita la compra y diseño de los vinilos, sino que tamb
 
 # Alcance del Proyecto
 
-1.      **Desarrollo de la plataforma web:**
+1. **Desarrollo de la plataforma web:**
 * Creación de una tienda en línea con Django y una interfaz atractiva y funcional.
 * Integración de pasarelas de pago seguras.
 * Implementación de un sistema de pedidos y seguimiento.
