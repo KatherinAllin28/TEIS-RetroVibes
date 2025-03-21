@@ -56,7 +56,7 @@ ROOT_URLCONF = 'RetroVibes.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "pages/templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,7 +70,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'RetroVibes.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
@@ -127,3 +126,7 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = '/order/'  # Redirigir después de iniciar sesión
+LOGOUT_REDIRECT_URL = '/'  # Redirigir a la página de inicio después de cerrar sesión
+

@@ -5,9 +5,12 @@ from django.urls import reverse
 from django import forms
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.exceptions import ValidationError
-from .models import Vinyl
-
-
+from .models import Vinyl, Order, OrderItem, Shipping
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+import uuid
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 class HomePageView(TemplateView):
     template_name = 'pages/home.html'
@@ -95,3 +98,79 @@ class VinylCreateView(View):
             return redirect("/cart/")  
 
         return render(request, self.template_name, {"form": form})
+    
+@method_decorator(login_required, name='dispatch')
+class OrderView(LoginRequiredMixin, TemplateView):
+    template_name = "order/index.html"
+    login_url = "/accounts/login/"  # Redirección si no está autenticado
+#class OrderView(View, LoginRequiredMixin, TemplateView):
+
+    def get(self, request):
+        cart_vinyl_data = request.session.get('cart_vinyl_data', {})
+        vinyls = Vinyl.objects.filter(id__in=cart_vinyl_data.keys())
+
+        total_price = sum(vinyl.price for vinyl in vinyls)
+
+        context = {
+            'vinyls': vinyls,
+            'total_price': total_price
+        }
+        return render(request, self.template_name, context)
+    
+    def post(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return redirect('login')  # Redirige a la página de login si no está autenticado
+        cart_vinyl_data = request.session.get('cart_vinyl_data', {})
+
+        if not cart_vinyl_data:
+            return redirect('cart_index')
+
+        order = Order.objects.create(user=request.user, total_price=0)
+        # ... lógica para agregar vinilos al pedido
+
+        total_price = 0
+        for vinyl_id, quantity in cart_vinyl_data.items():
+            vinyl = Vinyl.objects.get(id=vinyl_id)
+            OrderItem.objects.create(order=order, vinyl=vinyl, quantity=quantity)
+            total_price += vinyl.price * quantity
+
+        order.total_price = total_price
+        order.save()
+
+        # Limpiar carrito después de la compra
+        del request.session['cart_vinyl_data']
+
+        return redirect('shipping', order_id=order.id)
+
+@login_required(login_url="/accounts/login/")
+def order_view(request):
+    return render(request, "order/index.html")
+   
+@method_decorator(login_required, name='dispatch')
+class ShippingView(View):
+    template_name = "shipping/index.html"
+
+    def get(self, request, order_id):
+        order = Order.objects.get(id=order_id, user=request.user)
+        shipping, created = Shipping.objects.get_or_create(
+            order=order,
+            defaults={'tracking_number': str(uuid.uuid4()), 'estimated_delivery': '2025-04-01'}
+        )
+
+        context = {
+            'order': order,
+            'shipping': shipping
+        }
+        return render(request, self.template_name, context)
+    
+
+def register(request):
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("login")  # Redirige a la página de inicio de sesión
+    else:
+        form = UserCreationForm()
+    return render(request, "registration/register.html", {"form": form})
+
