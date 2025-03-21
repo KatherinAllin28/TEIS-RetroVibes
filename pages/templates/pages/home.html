@@ -1,6 +1,18 @@
 @extends('layouts.app')
 {% extends 'pages/base.html'%}
 {% block title%} 'Home' {% endblock%}
-<div>
-    Welcome
+{% block content %} 
+      
+<div class="principal_image">
+    <img class="image_home" src="https://e7.pngegg.com/pngimages/982/282/png-clipart-vinyl-record-shiny-vinyl-electronics-turntables.png" alt="Vinyl photo">
 </div>
+
+<a href="{% url 'index' %}">
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" type="button">Buy your own vinyl</button>
+    </div>
+</a>
+
+
+
+{% endblock %}

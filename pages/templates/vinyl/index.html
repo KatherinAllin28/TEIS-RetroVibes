@@ -1,0 +1,27 @@
+@extends('layouts.app')
+{% extends 'pages/base.html'%}
+{% block title%} 'Options' {% endblock%}
+{% block content %} 
+      
+    <div class="options">
+        <div class="create">
+            <img class="image_option" id="image_1" src="https://img.lovepik.com/element/40131/7988.png_300.png" alt="">
+            <br>
+            <a class="button_" href="{% url 'vinyl_create' %}">
+                <button type="button" class="btn btn-info">Create my own vinyl</button>
+            </a>
+            
+        </div>
+
+        <div class="search">
+            <img class="image_option" src="https://images.vexels.com/media/users/3/161229/isolated/preview/4a771d881c01f2f219463384e56c89ef-ilustracion-de-patron-de-disco-de-vinilo.png" alt="">
+            <br>
+            <a class="button_" href="{% url 'vinyl_list' %}">
+                <button type="button" class="btn btn-info">Search a vinyl</button>
+            </a>
+        </div>
+        
+        
+    </div>
+
+{% endblock %}

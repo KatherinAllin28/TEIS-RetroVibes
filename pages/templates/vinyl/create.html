@@ -1,0 +1,54 @@
+{% extends 'pages/base.html' %}
+
+{% block title %} Create Vinyl {% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Create a New Vinyl</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <div class="mb-3">
+            <label for="id_name">Name:</label>
+            {{ form.name }}
+        </div>
+
+        <div class="mb-3">
+            <label for="id_playlist">Playlist:</label>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            
+        </div>
+
+        <div class="mb-3">
+            <label for="id_size">Size:</label>
+            {{ form.size }}
+        </div>
+
+        <div class="mb-3">
+            <label for="id_colour">Colour:</label>
+            {{ form.colour }}
+        </div>
+
+        <div class="mb-3">
+            <label for="id_price">Price:</label>
+            200COP
+        </div>
+
+        <div class="mb-3">
+            <label for="id_image">Image:</label>
+            <input class="form-control" type="file" id="formFile">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Vinyl</button>
+    </form>
+
+    <br>
+    <a href="{% url 'vinyl_list' %}" class="btn btn-secondary">Back to List</a>
+</div>
+{% endblock %}
