@@ -5,6 +5,6 @@ class Vinyl(models.Model):
     imageDesign = models.ImageField(upload_to='templates/image')
     size = models.FloatField()
     colour = models.CharField(max_length=30)
-    price = models.IntegerField()
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=19.99)
 
 

@@ -69,3 +69,29 @@ class CartRemoveAllView(View):
             del request.session['cart_vinyl_data']
         
         return redirect('cart_index')
+    
+class VinylForm(forms.ModelForm):
+    class Meta:
+        model = Vinyl
+        fields = ['name', 'size', 'colour']
+
+    def clean_price(self):
+        price = self.cleaned_data.get('price')
+        if price is not None and price <= 0:
+            raise ValidationError("The price must be greater than zero.")
+        return price
+
+class VinylCreateView(View):
+    template_name = 'vinyl/create.html'
+
+    def get(self, request):
+        form = VinylForm()
+        return render(request, self.template_name, {"form": form})
+
+    def post(self, request):
+        form = VinylForm(request.POST, request.FILES)  
+        if form.is_valid():
+            form.save()
+            return redirect("/cart/")  
+
+        return render(request, self.template_name, {"form": form})
