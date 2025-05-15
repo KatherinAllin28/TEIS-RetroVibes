@@ -68,3 +68,73 @@
 .login-footer a:hover {
   text-decoration: underline;
 }
+
+/* ---------- Registro ---------- */
+.register-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  background-color: #fff;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.register-logo {
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.register-title {
+  color: #5a2e0c;
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.register-form p {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  background: #fafafa;
+}
+
+.register-btn {
+  background-color: #f28c6c;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  width: 100%;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.register-btn:hover {
+  background-color: #e87550;
+}
+
+.register-footer {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.register-footer a {
+  color: #f28c6c;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.register-footer a:hover {
+  text-decoration: underline;
+}

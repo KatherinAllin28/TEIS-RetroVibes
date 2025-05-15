@@ -27,7 +27,7 @@ Thumbs.db
 .idea/
 
 # Archivos de Django específicos
-staticfiles/
+
 media/
 local_settings.py
 .env
@@ -35,7 +35,6 @@ local_settings.py
 
 # Archivos de pruebas
 coverage/
-htmlcov/
 *.cover
 *.py,cover
 .tox/

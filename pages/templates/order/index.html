@@ -1,20 +1,25 @@
-{% extends 'base.html' %}
+
+{% extends 'pages/base.html' %}
+{% load static %}
 
 {% block content %}
-    <h2>Confirm Your Order</h2>
+<div class="confirm-container">
+    <h2 class="confirm-title">Confirmar tu pedido</h2>
 
     {% if vinyls %}
-        <ul>
+        <ul class="confirm-list">
             {% for vinyl in vinyls %}
-                <li>{{ vinyl.name }} - ${{ vinyl.price }}</li>
+                <li>{{ vinyl.name }} – ${{ vinyl.price }}</li>
             {% endfor %}
         </ul>
-        <p>Total: ${{ total_price }}</p>
 
-        <form method="post">
+        <p class="confirm-total">Total: ${{ total_price }}</p>
+
+        <form method="post" class="confirm-form">
             {% csrf_token %}
-            <button type="submit" class="btn btn-success">Realizar Pedido</button>
+            <button type="submit" class="confirm-btn">Realizar Pedido</button>
         </form>
     {% endif %}
+</div>
 {% endblock %}
 
