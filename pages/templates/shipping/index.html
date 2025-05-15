@@ -1,9 +1,15 @@
-{% extends 'base.html' %}
+{% extends 'pages/base.html' %}
+{% load static %}
 
 {% block content %}
-<h2>Shipping Details</h2>
-<p>Order ID: {{ order.id }}</p>
-<p>Status: {{ shipping.status }}</p>
-<p>Tracking Number: {{ shipping.tracking_number }}</p>
-<p>Estimated Delivery: {{ shipping.estimated_delivery }}</p>
+<div class="shipping-container">
+    <h2 class="shipping-title">Detalles del Envío</h2>
+
+    <div class="shipping-info">
+        <p><strong>ID del pedido:</strong> {{ order.id }}</p>
+        <p><strong>Estado:</strong> {{ shipping.status }}</p>
+        <p><strong>Número de seguimiento:</strong> {{ shipping.tracking_number }}</p>
+        <p><strong>Entrega estimada:</strong> {{ shipping.estimated_delivery }}</p>
+    </div>
+</div>
 {% endblock %}

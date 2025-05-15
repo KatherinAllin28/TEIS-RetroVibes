@@ -558,3 +558,32 @@ body.vinyl-list-page {
 .confirm-btn:hover {
   background-color: #e87550;
 }
+
+/* ----------- Shipping Details ---------- */
+.shipping-container {
+  max-width: 600px;
+  margin: 100px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.shipping-title {
+  text-align: center;
+  font-size: 28px;
+  color: #5a2e0c;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.shipping-info p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.shipping-info strong {
+  color: #f28c6c;
+}
