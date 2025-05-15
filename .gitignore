@@ -1,0 +1,50 @@
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Entorno virtual (ajusta si tiene otro nombre)
+env/
+venv/
+.venv/
+
+# Archivos de base de datos
+db.sqlite3
+*.sqlite3
+
+# Archivos de migraciones compilados
+*/migrations/__pycache__/
+*.log
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración de VSCode/PyCharm/etc
+.vscode/
+.idea/
+
+# Archivos de Django específicos
+staticfiles/
+media/
+local_settings.py
+.env
+.env.*
+
+# Archivos de pruebas
+coverage/
+htmlcov/
+*.cover
+*.py,cover
+.tox/
+.noseids
+
+# Archivos compilados de frontend (si usas npm/webpack/etc)
+node_modules/
+dist/
+build/
+
+# Otros
+*.bak

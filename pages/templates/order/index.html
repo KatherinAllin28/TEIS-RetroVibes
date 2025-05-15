@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Confirm Your Order</h2>
+
+    {% if vinyls %}
+        <ul>
+            {% for vinyl in vinyls %}
+                <li>{{ vinyl.name }} - ${{ vinyl.price }}</li>
+            {% endfor %}
+        </ul>
+        <p>Total: ${{ total_price }}</p>
+
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success">Realizar Pedido</button>
+        </form>
+    {% endif %}
+{% endblock %}
+

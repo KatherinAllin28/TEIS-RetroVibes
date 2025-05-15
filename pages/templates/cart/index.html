@@ -39,6 +39,22 @@
                 {% csrf_token %}
                 <button type="submit">Remove all products from cart</button>
             </form>
+
+            {% if cart_items %}
+                 <ul>
+                     {% for item in cart_items %}
+                         <li>{{ item.vinyl.name }} - ${{ item.vinyl.price }}</li>
+                     {% endfor %}
+                 </ul>
+
+                 <p>Total: ${{ total_price }}</p>
+
+                 {% if user.is_authenticated %}
+                     <a href="{% url 'order' %}" class="btn btn-primary">Procedimiento de pago</a>
+                 {% else %}
+                     <a href="{% url 'login' %}" class="btn btn-warning">Inicia sesión para comprar</a>
+                 {% endif %}
+            {% endif %}
         </div>
     </div>
 </div>
