@@ -1,0 +1,146 @@
+.navbar {
+    background-color: #F57F5B !important;
+}
+
+.offcanvas {
+    background-color: #F57F5B !important; 
+}
+
+.nav-link {
+    color: #582f0a; /* Cambia el color */
+}
+
+.principal_image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.image_home{
+    max-width: 100%;
+    height: auto;
+}
+
+.options {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente si es necesario */
+    gap: 20px; /* Espacio entre imágenes */
+    min-height: 80vh; /* Reducido para mejor adaptación */
+    flex-wrap: wrap; /* Permite que se ajuste en pantallas pequeñas */
+}
+
+.image_option {
+    width: 300px; /* Ajustado para mejor responsividad */
+    height: auto;
+    max-width: 100%;
+}
+
+.button_{
+    width: 100%; /* Hace que el botón se ajuste al contenedor */
+    max-width: 300px;  /* Máximo ancho del botón */
+    padding: 10px 0; /* Ajusta el padding para que sea más alto */
+    font-size: 16px; /* Aumenta el tamaño del texto */
+    border-radius: 8px;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Ajuste para los contenedores de imagen y botón */
+.create, .search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.vinyl-card {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.vinyl-image img {
+    width: 180px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.vinyl-details {
+    padding-left: 20px;
+}
+
+.vinyl-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.vinyl-details p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #555;
+}
+
+.buy-btn {
+    display: block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buy-btn:hover {
+    background: #0056b3;
+}
+
+/* Estilos para tarjetas de vinilos */
+.card {
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.img-card {
+    height: 200px;
+    object-fit: contain;
+    padding: 15px;
+}
+
+/* Estilos para formularios */
+.form-control, .form-select {
+    margin-bottom: 15px;
+}
+
+/* Responsive media queries */
+@media (max-width: 768px) {
+    .options {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .vinyl-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .vinyl-details {
+        padding-left: 0;
+        padding-top: 20px;
+    }
+}

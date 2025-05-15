@@ -1,27 +1,52 @@
-@extends('layouts.app')
+
 {% extends 'pages/base.html'%}
 {% block title%} 'Options' {% endblock%}
 {% block content %} 
       
-    <div class="options">
-        <div class="create">
-            <img class="image_option" id="image_1" src="https://img.lovepik.com/element/40131/7988.png_300.png" alt="">
-            <br>
-            <a class="button_" href="{% url 'vinyl_create' %}">
-                <button type="button" class="btn btn-info">Create my own vinyl</button>
-            </a>
-            
-        </div>
+    
+<body class="index-page">
+    <div class="vinyl-container">
+        <a class="button_" href="{% url 'vinyl_create' %}">
+            <div class="vinyl-wrapper">
+                <svg viewBox="0 0 400 200" class="vinyl-label">
+                    <defs>
+                        <path id="arc1" d="M 0 170 A 200 100 0 0 1 400 170" />
+                    </defs>
+                    <text class="arc-text">
+                        <textPath href="#arc1" startOffset="50%" text-anchor="middle">
+                            Create my own vinyl
+                        </textPath>
+                    </text>
+                </svg>
+                <div class="vinyl center-red"></div>
+            </div>
+        </a>
 
-        <div class="search">
-            <img class="image_option" src="https://images.vexels.com/media/users/3/161229/isolated/preview/4a771d881c01f2f219463384e56c89ef-ilustracion-de-patron-de-disco-de-vinilo.png" alt="">
-            <br>
-            <a class="button_" href="{% url 'vinyl_list' %}">
-                <button type="button" class="btn btn-info">Search a vinyl</button>
-            </a>
-        </div>
+        <a class="button_" href="{% url 'vinyl_list' %}">
+            <div class="vinyl-wrapper">
+                <svg viewBox="0 0 400 200" class="vinyl-label">
+                    <defs>
+                        <path id="arc2" d="M 0 170 A 200 100 0 0 1 400 170" />
+                    </defs>
+                    <text class="arc-text">
+                        <textPath href="#arc2" startOffset="50%" text-anchor="middle">
+                            Search a vinyl
+                        </textPath>
+                    </text>
+                </svg>
+            <div class="vinyl center-blue"></div>
+            </div>
+        </a>
         
         
-    </div>
+    </div> 
+
+    
+       
+
+</body>
+
+
+
 
 {% endblock %}

@@ -1,17 +1,35 @@
-@extends('layouts.app')
+
 {% extends 'pages/base.html'%}
 {% block title%} 'Home' {% endblock%}
 {% block content %} 
-      
-<div class="principal_image">
-    <img class="image_home" src="https://e7.pngegg.com/pngimages/982/282/png-clipart-vinyl-record-shiny-vinyl-electronics-turntables.png" alt="Vinyl photo">
-</div>
 
-<a href="{% url 'index' %}">
-    <div class="d-grid gap-2 col-6 mx-auto">
-        <button class="btn btn-primary" type="button">Buy your own vinyl</button>
+<body class="home-page">
+  <div class="logo-container">
+    <!-- Vinilo separado -->
+    <div class="vinyl-disc"></div>
+
+    <!-- Cuadro encima -->
+    <div class="logo-box">
+      <div class="letters">
+        <span class="letter-r">R</span><span class="letter-v">V</span>
+      </div>
+      <div class="subtitle">
+        <span class="retro">Retro</span><span class="vibes">Vibes</span>
+      </div>
     </div>
-</a>
+  </div>
+  <br>
+  <br>
+
+  <a href="{% url 'index' %}" class="vinyl-btn">
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button class="btn btn-primary" type="button">Buy your own vinyl</button>
+    </div>
+  </a>
+</body>
+
+
+
 
 
 
