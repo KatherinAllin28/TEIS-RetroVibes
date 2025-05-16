@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-16 07:05+0000\n"
+"POT-Creation-Date: 2025-05-16 07:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,6 +52,7 @@ msgid "Cerrar Sesión"
 msgstr ""
 
 #: pages/templates/cart/index.html:5 pages/templates/pages/base.html:33
+#: pages/templates/pages/base.html:56
 msgid "Carrito"
 msgstr ""
 
@@ -108,16 +109,12 @@ msgstr ""
 msgid "Tienda en Linea"
 msgstr ""
 
-#: pages/templates/pages/base.html:38
+#: pages/templates/pages/base.html:38 pages/templates/pages/base.html:57
 msgid "Perfil"
 msgstr ""
 
-#: pages/templates/pages/base.html:56
-msgid "Cart"
-msgstr ""
-
-#: pages/templates/pages/base.html:57
-msgid "Profile"
+#: pages/templates/pages/base.html:80
+msgid "🎧Top 50🎧 Global de Spotify"
 msgstr ""
 
 #: pages/templates/pages/home.html:5

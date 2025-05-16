@@ -20,270 +20,265 @@ msgstr ""
 
 #: RetroVibes/settings.py:113
 msgid "Español"
-msgstr ""
+msgstr "Espagnol"
 
 #: RetroVibes/settings.py:114
 msgid "Inglés"
-msgstr ""
+msgstr "Anglais"
 
 #: RetroVibes/settings.py:115
 msgid "Francés"
-msgstr ""
+msgstr "Français"
 
 #: pages/templates/JSON/productos_aliados.html:5
 msgid "Productos Aliados"
-msgstr ""
+msgstr "Produits Alliés"
 
 #: pages/templates/JSON/productos_aliados.html:12
 msgid "No Hay Productos Disponibles"
-msgstr ""
+msgstr "Aucun produit disponible"
 
 #: pages/templates/accounts/login.html:6
 msgid "Iniciar Sesión"
-msgstr ""
+msgstr "Se connecter"
 
 #: pages/templates/accounts/login.html:10
 msgid "Ingresar"
-msgstr ""
+msgstr "Connexion"
 
 #: pages/templates/accounts/profile.html:42
 msgid "Cerrar Sesión"
-msgstr ""
+msgstr "Se déconnecter"
 
-#: pages/templates/cart/index.html:5 pages/templates/pages/base.html:33
+#: pages/templates/cart/index.html:5
+#: pages/templates/pages/base.html:33
+#: pages/templates/pages/base.html:56
 msgid "Carrito"
-msgstr ""
+msgstr "Panier"
 
 #: pages/templates/cart/index.html:16
 msgid "Productos Disponibles"
-msgstr ""
+msgstr "Produits disponibles"
 
 #: pages/templates/cart/index.html:20 pages/templates/cart/index.html:39
 msgid "ID:"
-msgstr ""
+msgstr "ID :"
 
 #: pages/templates/cart/index.html:21 pages/templates/cart/index.html:40
 msgid "Nombre:"
-msgstr ""
+msgstr "Nom :"
 
 #: pages/templates/cart/index.html:22 pages/templates/cart/index.html:41
 #: pages/templates/vinyl/create.html:41 pages/templates/vinyl/show.html:14
 msgid "Precio:"
-msgstr ""
+msgstr "Prix :"
 
 #: pages/templates/cart/index.html:25
 msgid "Añadir producto al Carrito:"
-msgstr ""
+msgstr "Ajouter un produit au panier :"
 
 #: pages/templates/cart/index.html:35
 msgid "Productos en el Carrito:"
-msgstr ""
+msgstr "Produits dans le panier :"
 
 #: pages/templates/cart/index.html:47
 msgid "Remueve todos los productos del Carrito"
-msgstr ""
+msgstr "Retirer tous les produits du panier"
 
 #: pages/templates/cart/index.html:56 pages/templates/order/index.html:15
 msgid "Total: $"
-msgstr ""
+msgstr "Total : $"
 
 #: pages/templates/cart/index.html:59
 msgid "Comprar"
-msgstr ""
+msgstr "Acheter"
 
 #: pages/templates/cart/index.html:61
 msgid "Inicia Sesion para Comprar"
-msgstr ""
+msgstr "Connectez-vous pour acheter"
 
 #: pages/templates/order/index.html:7
 msgid "Confirmar tu pedido"
-msgstr ""
+msgstr "Confirmer votre commande"
 
 #: pages/templates/order/index.html:19
 msgid "Realizar Pedido"
-msgstr ""
+msgstr "Passer la commande"
 
 #: pages/templates/pages/base.html:10
 msgid "Tienda en Linea"
-msgstr ""
+msgstr "Boutique en ligne"
 
 #: pages/templates/pages/base.html:38
-msgid "Perfil"
-msgstr ""
-
-#: pages/templates/pages/base.html:56
-msgid "Cart"
-msgstr ""
-
 #: pages/templates/pages/base.html:57
-msgid "Profile"
-msgstr ""
+msgid "Perfil"
+msgstr "Profil"
 
 #: pages/templates/pages/home.html:5
 msgid "Home"
-msgstr ""
+msgstr "Accueil"
 
 #: pages/templates/pages/home.html:28
 msgid "Compra tu Vinilo Original"
-msgstr ""
+msgstr "Achetez votre vinyle original"
 
 #: pages/templates/pdf/receipt_template.html:13
 msgid "Recibo de Compra - Pedido #"
-msgstr ""
+msgstr "Reçu d'achat - Commande n°"
 
 #: pages/templates/pdf/receipt_template.html:15
 msgid "Estado:"
-msgstr ""
+msgstr "Statut :"
 
 #: pages/templates/pdf/receipt_template.html:16
 msgid "Seguimiento:"
-msgstr ""
+msgstr "Suivi :"
 
 #: pages/templates/pdf/receipt_template.html:17
 msgid "Entrega estimada:"
-msgstr ""
+msgstr "Livraison estimée :"
 
 #: pages/templates/registration/login.html:10
 msgid "Ingreso"
-msgstr ""
+msgstr "Connexion"
 
 #: pages/templates/registration/login.html:17
 msgid "Iniciar sesión"
-msgstr ""
+msgstr "Se connecter"
 
 #: pages/templates/registration/login.html:22
 msgid "Entrar"
-msgstr ""
+msgstr "Entrer"
 
 #: pages/templates/registration/login.html:25
 msgid "¿No tienes una cuenta?"
-msgstr ""
+msgstr "Vous n'avez pas de compte ?"
 
 #: pages/templates/registration/login.html:26
 msgid "Regístrate aquí"
-msgstr ""
+msgstr "Inscrivez-vous ici"
 
 #: pages/templates/registration/register.html:11
 msgid "Registro"
-msgstr ""
+msgstr "Inscription"
 
 #: pages/templates/registration/register.html:17
 #: pages/templates/registration/register.html:22
 msgid "Registrarse"
-msgstr ""
+msgstr "S'inscrire"
 
 #: pages/templates/registration/register.html:26
 msgid "¿Ya tienes una cuenta?"
-msgstr ""
+msgstr "Vous avez déjà un compte ?"
 
 #: pages/templates/registration/register.html:27
 msgid "Inicia sesión"
-msgstr ""
+msgstr "Se connecter"
 
 #: pages/templates/shipping/index.html:7
 msgid "Detalles del Envío"
-msgstr ""
+msgstr "Détails de la livraison"
 
 #: pages/templates/shipping/index.html:10
 msgid "ID del pedido"
-msgstr ""
+msgstr "ID de commande"
 
 #: pages/templates/shipping/index.html:11
 msgid "Estado del envío"
-msgstr ""
+msgstr "Statut de la livraison"
 
 #: pages/templates/shipping/index.html:12
 msgid "Número de seguimiento"
-msgstr ""
+msgstr "Numéro de suivi"
 
 #: pages/templates/shipping/index.html:13
 msgid "Entrega estimada"
-msgstr ""
+msgstr "Livraison estimée"
 
 #: pages/templates/shipping/index.html:18
 msgid "Productos comprados"
-msgstr ""
+msgstr "Produits achetés"
 
 #: pages/templates/shipping/index.html:24
 msgid "Total"
-msgstr ""
+msgstr "Total"
 
 #: pages/templates/shipping/index.html:26
 msgid "Descargar recibo PDF"
-msgstr ""
+msgstr "Télécharger le reçu PDF"
 
 #: pages/templates/vinyl/create.html:5
 msgid "Crear vinilo"
-msgstr ""
+msgstr "Créer un vinyle"
 
 #: pages/templates/vinyl/create.html:9
 msgid "Crea un vinilo nuevo"
-msgstr ""
+msgstr "Créez un nouveau vinyle"
 
 #: pages/templates/vinyl/create.html:15
 msgid "Nombre"
-msgstr ""
+msgstr "Nom"
 
 #: pages/templates/vinyl/create.html:20
 msgid "Playlist"
-msgstr ""
+msgstr "Playlist"
 
 #: pages/templates/vinyl/create.html:22
 msgid "Abre este menu"
-msgstr ""
+msgstr "Ouvrir ce menu"
 
 #: pages/templates/vinyl/create.html:31
 msgid "Tamaño"
-msgstr ""
+msgstr "Taille"
 
 #: pages/templates/vinyl/create.html:36
 msgid "Color"
-msgstr ""
+msgstr "Couleur"
 
 #: pages/templates/vinyl/create.html:46
 msgid "Imagen"
-msgstr ""
+msgstr "Image"
 
 #: pages/templates/vinyl/create.html:50
 msgid "Crear Vinilo"
-msgstr ""
+msgstr "Créer un vinyle"
 
 #: pages/templates/vinyl/create.html:54
 msgid "Regresa a la lista"
-msgstr ""
+msgstr "Retour à la liste"
 
 #: pages/templates/vinyl/index.html:4
 msgid "Opciones"
-msgstr ""
+msgstr "Options"
 
 #: pages/templates/vinyl/index.html:18
 msgid "Crear mi propio Vinilo"
-msgstr ""
+msgstr "Créer mon propre vinyle"
 
 #: pages/templates/vinyl/index.html:34
 msgid "Buscar un vinilo"
-msgstr ""
+msgstr "Rechercher un vinyle"
 
 #: pages/templates/vinyl/list.html:4 pages/templates/vinyl/show.html:4
 msgid "Vinilos"
-msgstr ""
+msgstr "Vinyles"
 
 #: pages/templates/vinyl/show.html:12
 msgid "Color:"
-msgstr ""
+msgstr "Couleur :"
 
 #: pages/templates/vinyl/show.html:13
 msgid "Tamaño:"
-msgstr ""
+msgstr "Taille :"
 
 #: pages/templates/vinyl/show.html:16
 msgid "Añadir al Carrito"
-msgstr ""
+msgstr "Ajouter au panier"
 
 #: pages/views.py:79
 msgid "Tu producto ha sido agregado a tu carrito exitosamente 😉"
-msgstr ""
+msgstr "Votre produit a été ajouté à votre panier avec succès 😉"
 
 #: pages/views.py:97
 msgid "El precio debe ser mayor que cero."
-msgstr ""
+msgstr "Le prix doit être supérieur à zéro."

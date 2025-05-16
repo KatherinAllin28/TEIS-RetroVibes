@@ -705,3 +705,40 @@ body.vinyl-list-page {
   font-weight: bold;
 }
 
+.btn-icon-orange {
+  color: #915018;
+  border: 1px solid #915018;
+  background-color: transparent;
+  padding: 5px 12px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-icon-orange:hover {
+  background-color: #915018;
+  color: white;
+  text-decoration: none;
+}
+.language-selector {
+  background-color: transparent;
+  border: 1px solid #915018;
+  color: #915018;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.language-selector:hover {
+  background-color: #915018;
+  color: white;
+}
+
+.language-selector option {
+  color: black; /* Opciones del dropdown */
+}

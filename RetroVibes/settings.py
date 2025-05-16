@@ -125,7 +125,7 @@ USE_TZ = True
 
 # Ruta donde estarán los archivos de traducción (.po, .mo)
 LOCALE_PATHS = [
-    os.path.join(BASE_DIR, 'locale'),
+    BASE_DIR / "locale",  # adjust depending on your folder structure
 ]
 
 # Static files (CSS, JavaScript, Images)
