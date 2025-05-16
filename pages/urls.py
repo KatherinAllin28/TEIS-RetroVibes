@@ -20,6 +20,9 @@ urlpatterns = [
     path("logout/", auth_views.LogoutView.as_view(), name="logout"),
     path("register/", register, name="register"),
     path('perfil/', views.profile_view, name='profile'),
+    path("recibo/<int:order_id>/", views.download_receipt, name="download_receipt"),
+   
+
 ]
 
 

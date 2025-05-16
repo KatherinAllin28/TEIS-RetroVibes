@@ -1,4 +1,4 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 from django.views.generic import TemplateView, ListView
 from django.views import View
 from django.urls import reverse
@@ -13,6 +13,10 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import login
 from .forms import RegisterForm
+from django.http import FileResponse
+from .services.pdf_receipt_generator import ReceiptGenerator
+from datetime import timedelta
+from django.utils import timezone
 
 class HomePageView(TemplateView):
     template_name = 'pages/home.html'
@@ -153,18 +157,26 @@ class ShippingView(View):
     template_name = "shipping/index.html"
 
     def get(self, request, order_id):
-        order = Order.objects.get(id=order_id, user=request.user)
+        order = get_object_or_404(Order, id=order_id, user=request.user)
+
         shipping, created = Shipping.objects.get_or_create(
             order=order,
-            defaults={'tracking_number': str(uuid.uuid4()), 'estimated_delivery': '2025-04-01'}
+            defaults={
+                'tracking_number': str(uuid.uuid4()),
+                'estimated_delivery': timezone.now().date() + timedelta(days=7)
+            }
         )
+
+        items = order.orderitem_set.select_related('vinyl')
+        total_price = order.total_price
 
         context = {
             'order': order,
-            'shipping': shipping
+            'shipping': shipping,
+            'items': items,
+            'total_price': total_price,
         }
         return render(request, self.template_name, context)
-    
 
 def register(request):
     if request.method == "POST":
@@ -180,3 +192,19 @@ def register(request):
 @login_required
 def profile_view(request):
     return render(request, 'accounts/profile.html')
+
+
+@login_required
+def download_receipt(request, order_id):
+    order = get_object_or_404(Order, id=order_id, user=request.user)
+    shipping = get_object_or_404(Shipping, order=order)
+
+    context = {
+        "order": order,
+        "shipping": shipping,
+    }
+
+    generator = ReceiptGenerator() 
+    pdf_file = generator.generate(context)
+
+    return FileResponse(pdf_file, as_attachment=True, filename=f"recibo_{order.id}.pdf")

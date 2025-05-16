@@ -8,9 +8,22 @@
 
     <div class="shipping-info">
         <p><strong>ID del pedido:</strong> {{ order.id }}</p>
-        <p><strong>Estado:</strong> {{ shipping.status }}</p>
+        <p><strong>Estado del envío:</strong> {{ shipping.status }}</p>
         <p><strong>Número de seguimiento:</strong> {{ shipping.tracking_number }}</p>
         <p><strong>Entrega estimada:</strong> {{ shipping.estimated_delivery }}</p>
     </div>
+
+    <hr>
+
+    <h4>Productos comprados:</h4>
+    <ul>
+        {% for item in items %}
+            <li>{{ item.vinyl.name }} - ${{ item.vinyl.price }} x{{ item.quantity }}</li>
+        {% endfor %}
+    </ul>
+    <p><strong>Total:</strong> ${{ total_price }}</p>
+
+    <a href="{% url 'download_receipt' order.id %}" class="btn btn-outline-success mt-3">Descargar recibo PDF</a>
+
 </div>
 {% endblock %}
