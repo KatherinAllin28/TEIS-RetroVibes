@@ -16,9 +16,10 @@ urlpatterns = [
     path('vinyls/create/', VinylCreateView.as_view(), name='vinyl_create'),  # URL para crear un vinilo
     path('order/', OrderView.as_view(), name='order'),
     path('shipping/<int:order_id>/', ShippingView.as_view(), name='shipping'),
-    path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
-    path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path("login/", auth_views.LoginView.as_view(), name="login"),
+    path("logout/", auth_views.LogoutView.as_view(), name="logout"),
     path("register/", register, name="register"),
+    path('perfil/', views.profile_view, name='profile'),
 ]
 
 

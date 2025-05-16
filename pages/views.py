@@ -11,6 +11,8 @@ from django.utils.decorators import method_decorator
 import uuid
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import login
+from .forms import RegisterForm
 
 class HomePageView(TemplateView):
     template_name = 'pages/home.html'
@@ -166,11 +168,15 @@ class ShippingView(View):
 
 def register(request):
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = RegisterForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect("login")  # Redirige a la página de inicio de sesión
+            user = form.save()
+            login(request, user) 
+            return redirect("profile") 
     else:
-        form = UserCreationForm()
+        form = RegisterForm()
     return render(request, "registration/register.html", {"form": form})
 
+@login_required
+def profile_view(request):
+    return render(request, 'accounts/profile.html')

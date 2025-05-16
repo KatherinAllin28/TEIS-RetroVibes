@@ -1,0 +1,27 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="profile-container">
+    <img src="../../static/image/Presentación_Diapositivas_Informe_Proyecto_Negocios_Orgánico_Marrón.png" alt="Avatar" class="profile-avatar">
+
+    <h2 class="profile-name">
+        {% if user.first_name or user.last_name %}
+            {{ user.first_name }} {{ user.last_name }}
+        {% else %}
+            {{ user.username }}
+        {% endif %}
+    </h2>
+
+    <p class="profile-username">@{{ user.username }}</p>
+
+    {% if user.email %}
+        <p class="profile-email">{{ user.email }}</p>
+    {% endif %}
+
+    <div class="profile-actions">
+        <a href="{% url 'login' %}" class="btn btn-outline-danger">Cerrar sesión</a>
+    </div>
+</div>
+{% endblock %}
+

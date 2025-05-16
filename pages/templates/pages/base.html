@@ -31,11 +31,10 @@
                     <li class="nav-item">
                       <a class="nav-link" href="{% url 'cart_index' %}">Cart</a>
                     </li>
+                  
+
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Wish List</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
+                        <a class="nav-link" href="{% url 'profile' %}">Profile</a>
                     </li>
                   </ul>
                 </div>
@@ -43,9 +42,9 @@
               <!-- Elementos -->
               <img src="../../static/image/Presentación_Diapositivas_Informe_Proyecto_Negocios_Orgánico_Marrón.png" alt="logo" class="navbar-logo">
                 <nav class="nav">
-                    <a class="nav-link active" aria-current="page" href="#">Wish list</a>
+                    
                     <a class="nav-link" href="{% url 'cart_index' %}">Cart</a>
-                    <a class="nav-link" href="#">Profile</a>
+                    <a class="nav-link" href="{% url 'profile' %}">Profile</a>
                 </nav>
             </div>
           </nav>
