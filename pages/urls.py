@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import HomePageView, OptionsView, VinylIndexView, VinylShowView, CartView, CartRemoveAllView, VinylCreateView, VinylForm, OrderView, ShippingView, register
+from .views import HomePageView, OptionsView, VinylIndexView, VinylShowView, CartView, CartRemoveAllView, VinylCreateView, VinylForm, OrderView, ShippingView, register, VinylListAPIView, productos_aliados
 from . import views
 from django.contrib.auth import views as auth_views
 from django.conf import settings
@@ -21,6 +21,8 @@ urlpatterns = [
     path("register/", register, name="register"),
     path('perfil/', views.profile_view, name='profile'),
     path("recibo/<int:order_id>/", views.download_receipt, name="download_receipt"),
+    path('api/vinyls/', VinylListAPIView.as_view(), name='api_vinyl_list'),
+    path('productos-aliados/', productos_aliados, name='productos_aliados'),
    
 
 ]

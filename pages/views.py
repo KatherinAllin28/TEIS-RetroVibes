@@ -17,6 +17,11 @@ from django.http import FileResponse
 from .services.pdf_receipt_generator import ReceiptGenerator
 from datetime import timedelta
 from django.utils import timezone
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from .serializers import VinylSerializer
+import requests
 
 class HomePageView(TemplateView):
     template_name = 'pages/home.html'
@@ -208,3 +213,23 @@ def download_receipt(request, order_id):
     pdf_file = generator.generate(context)
 
     return FileResponse(pdf_file, as_attachment=True, filename=f"recibo_{order.id}.pdf")
+
+class VinylListAPIView(APIView):
+    def get(self, request):
+        vinyls = Vinyl.objects.all()
+        serializer = VinylSerializer(vinyls, many=True, context={'request': request})
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
+def productos_aliados(request):
+    
+    response = requests.get('http://localhost:8000/api/vinyls/') #<---------- link aqui
+    
+    if response.status_code == 200:
+        productos = response.json()  
+    else:
+        productos = []  
+
+    context = {
+        'productos': productos
+    }
+    return render(request, 'JSON/productos_aliados.html', context)

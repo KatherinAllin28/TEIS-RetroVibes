@@ -1,0 +1,13 @@
+{% extends 'pages/base.html' %}
+{% block content %}
+<h1>Productos Aliados</h1>
+<ul>
+    {% for producto in productos %}
+        <li>
+            <a href="{{ producto.detail_url }}">{{ producto.name }}</a> - ${{ producto.price }}
+        </li>
+    {% empty %}
+        <li>No hay productos disponibles.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
