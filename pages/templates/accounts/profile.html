@@ -2,6 +2,24 @@
 {% load static %}
 
 {% block content %}
+{% if messages %}
+  <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+    {% for message in messages %}
+      <div style="background-color: #f57f5b; color: #915018; padding: 10px 15px; border-radius: 5px; margin-bottom: 10px;">
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+  <script>
+    setTimeout(() => {
+      const toast = document.querySelector('div[style*="position: fixed"]');
+      if (toast) {
+        toast.remove();
+      }
+    }, 3000);
+  </script>
+{% endif %}
+
 <div class="profile-container">
     <img src="../../static/image/Presentación_Diapositivas_Informe_Proyecto_Negocios_Orgánico_Marrón.png" alt="Avatar" class="profile-avatar">
 

@@ -22,6 +22,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .serializers import VinylSerializer
 import requests
+from django.contrib import messages
 
 class HomePageView(TemplateView):
     template_name = 'pages/home.html'
@@ -189,6 +190,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user) 
+            messages.success(request, "Creación de usuario exitosa ✅")
             return redirect("profile") 
     else:
         form = RegisterForm()
