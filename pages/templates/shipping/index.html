@@ -1,29 +1,29 @@
 {% extends 'pages/base.html' %}
 {%load static%}
-
+{% load i18n %}
 
 {% block content %}
 <div class="shipping-container">
-    <h2 class="shipping-title">Detalles del Envío</h2>
+    <h2 class="shipping-title">{% trans "Detalles del Envío" %}</h2>
 
     <div class="shipping-info">
-        <p><strong>ID del pedido:</strong> {{ order.id }}</p>
-        <p><strong>Estado del envío:</strong> {{ shipping.status }}</p>
-        <p><strong>Número de seguimiento:</strong> {{ shipping.tracking_number }}</p>
-        <p><strong>Entrega estimada:</strong> {{ shipping.estimated_delivery }}</p>
+        <p><strong>{% trans "ID del pedido" %}</strong> {{ order.id }}</p>
+        <p><strong>{% trans "Estado del envío" %}</strong> {{ shipping.status }}</p>
+        <p><strong>{% trans "Número de seguimiento" %}</strong> {{ shipping.tracking_number }}</p>
+        <p><strong>{% trans "Entrega estimada" %}</strong> {{ shipping.estimated_delivery }}</p>
     </div>
 
     <hr>
 
-    <h4>Productos comprados:</h4>
+    <h4>{% trans "Productos comprados" %}</h4>
     <ul>
         {% for item in items %}
             <li>{{ item.vinyl.name }} - ${{ item.vinyl.price }} x{{ item.quantity }}</li>
         {% endfor %}
     </ul>
-    <p><strong>Total:</strong> ${{ total_price }}</p>
+    <p><strong>{% trans "Total" %}</strong> ${{ total_price }}</p>
 
-    <a href="{% url 'download_receipt' order.id %}" class="btn btn-outline-success mt-3">Descargar recibo PDF</a>
+    <a href="{% url 'download_receipt' order.id %}" class="btn btn-outline-success mt-3">{% trans "Descargar recibo PDF" %}</a>
 
 </div>
 {% endblock %}

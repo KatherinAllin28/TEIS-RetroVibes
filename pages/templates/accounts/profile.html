@@ -1,5 +1,6 @@
 {% extends 'pages/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 {% if messages %}
@@ -38,7 +39,7 @@
     {% endif %}
 
     <div class="profile-actions">
-        <a href="{% url 'login' %}" class="btn btn-outline-danger">Cerrar sesión</a>
+        <a href="{% url 'login' %}" class="btn btn-outline-danger">{% trans "Cerrar Sesión" %}</a>
     </div>
 </div>
 {% endblock %}

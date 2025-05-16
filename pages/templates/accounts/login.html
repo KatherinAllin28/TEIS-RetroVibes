@@ -1,11 +1,12 @@
 {% extends 'pages/base.html' %}
 {%load static%}
+{% load i18n %}
 
 {% block content %}
-<h2>Iniciar Sesión</h2>
+<h2>{% trans "Iniciar Sesión" %}</h2>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Ingresar</button>
+    <button type="submit">{% trans "Ingresar" %}</button>
 </form>
 {% endblock %}

@@ -1,8 +1,8 @@
 {% extends 'pages/base.html'%}
 {%load static%}
-{% block title%} 'Options' {% endblock%}
+{% block title%} {% trans "Options" %} {% endblock%}
 {% block content %} 
-      
+{% load i18n %}    
     
 <body class="index-page">
     <div class="vinyl-container">
@@ -14,7 +14,7 @@
                     </defs>
                     <text class="arc-text">
                         <textPath href="#arc1" startOffset="50%" text-anchor="middle">
-                            Create my own vinyl
+                            {% trans "Create my own vinyl" %}
                         </textPath>
                     </text>
                 </svg>
@@ -30,7 +30,7 @@
                     </defs>
                     <text class="arc-text">
                         <textPath href="#arc2" startOffset="50%" text-anchor="middle">
-                            Search a vinyl
+                            {% trans "Search a vinyl" %}
                         </textPath>
                     </text>
                 </svg>

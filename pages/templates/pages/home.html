@@ -1,6 +1,8 @@
 {% extends 'pages/base.html' %}
 {%load static%}
-{% block title%} 'Home' {% endblock%}
+{% load i18n %}
+
+{% block title %}{% trans "Home" %}{% endblock %}
 {% block content %} 
 
 <body class="home-page">
@@ -23,7 +25,7 @@
 
   <a href="{% url 'index' %}" class="vinyl-btn">
     <div class="d-grid gap-2 col-6 mx-auto">
-      <button class="btn btn-primary" type="button">Buy your own vinyl</button>
+      <button class="btn btn-primary" type="button">{% trans "Buy your own vinyl" %}</button>
     </div>
   </a>
 </body>

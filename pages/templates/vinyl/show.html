@@ -1,6 +1,7 @@
 {% extends 'pages/base.html' %}
+{% load i18n %}
 {%load static%}
-{% block title %} Vinyls {% endblock %}
+{% block title %} {% trans "Vinyls" %} {% endblock %}
 {% block content %}
 <div class="vinyl-card">
     <div class="vinyl-image">
@@ -8,11 +9,11 @@
     </div>
     <div class="vinyl-details">
         <h2>{{ vinyl.name }}</h2>
-        <p><strong>Color:</strong> {{ vinyl.colour }}</p>
-        <p><strong>Size:</strong> {{ vinyl.size }} inches</p>
-        <p><strong>Price:</strong> ${{ vinyl.price }}</p>
+        <p><strong>{% trans "Color:" %}</strong> {{ vinyl.colour }}</p>
+        <p><strong>{% trans "Size" %}</strong> {{ vinyl.size }} inches</p>
+        <p><strong>{% trans "Price" %}:</strong> ${{ vinyl.price }}</p>
         <a href="{% url 'cart_index' %}">
-            <button class="buy-btn">Add Cart</button>
+            <button class="buy-btn">{% trans "Add Cart" %}</button>
         </a>
         
     </div>

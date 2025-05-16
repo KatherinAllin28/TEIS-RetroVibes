@@ -1,9 +1,10 @@
-from django.urls import path
-from .views import HomePageView, OptionsView, VinylIndexView, VinylShowView, CartView, CartRemoveAllView, VinylCreateView, VinylForm, OrderView, ShippingView, register, VinylListAPIView, productos_aliados
+from django.urls import path, include
+from .views import HomePageView, OptionsView, VinylIndexView, VinylShowView, CartView, CartRemoveAllView, VinylCreateView, VinylForm, OrderView, ShippingView, register,  VinylListAPIView, productos_aliados
 from . import views
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
     path('', HomePageView.as_view(), name='home'),
@@ -23,7 +24,7 @@ urlpatterns = [
     path("recibo/<int:order_id>/", views.download_receipt, name="download_receipt"),
     path('api/vinyls/', VinylListAPIView.as_view(), name='api_vinyl_list'),
     path('productos-aliados/', productos_aliados, name='productos_aliados'),
-   
+    path('i18n/', include('django.conf.urls.i18n'))
 
 ]
 

@@ -1,25 +1,25 @@
 {% extends 'pages/base.html' %}
 {%load static%}
+{% load i18n %}
 
-
-{% block title %} Create Vinyl {% endblock %}
+{% block title %} {% trans "Create Vinyl" %} {% endblock %}
 
 {% block content %}
 <div class="container">
-    <h1>Create a New Vinyl</h1>
+    <h1>{% trans "Create a New Vinyl" %}</h1>
 
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         
         <div class="mb-3">
-            <label for="id_name">Name:</label>
+            <label for="id_name">{% trans "Name" %}</label>
             {{ form.name }}
         </div>
 
         <div class="mb-3">
-            <label for="id_playlist">Playlist:</label>
+            <label for="id_playlist">{% trans "Playlist" %}</label>
             <select class="form-select" aria-label="Default select example">
-                <option selected>Open this select menu</option>
+                <option selected>{%trans "Open this select menu" %}</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
@@ -28,29 +28,29 @@
         </div>
 
         <div class="mb-3">
-            <label for="id_size">Size:</label>
+            <label for="id_size">{% trans "Size" %}</label>
             {{ form.size }}
         </div>
 
         <div class="mb-3">
-            <label for="id_colour">Colour:</label>
+            <label for="id_colour">{% trans "Colour" %}</label>
             {{ form.colour }}
         </div>
 
         <div class="mb-3">
-            <label for="id_price">Price:</label>
+            <label for="id_price">{% trans "Price:" %}</label>
             200COP
         </div>
 
         <div class="mb-3">
-            <label for="id_image">Image:</label>
+            <label for="id_image">{% trans "Image" %}</label>
             <input class="form-control" type="file" id="formFile">
         </div>
 
-        <button type="submit" class="btn btn-primary">Create Vinyl</button>
+        <button type="submit" class="btn btn-primary">{% trans "Create Vinyl" %}</button>
     </form>
 
     <br>
-    <a href="{% url 'vinyl_list' %}" class="btn btn-secondary">Back to List</a>
+    <a href="{% url 'vinyl_list' %}" class="btn btn-secondary">{% trans "Back to List" %}</a>
 </div>
 {% endblock %}

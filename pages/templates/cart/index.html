@@ -1,22 +1,23 @@
 {% extends 'pages/base.html' %}
 {%load static%}
+{% load i18n %}
 
-{% block title %} Cart {% endblock %} 
+{% block title %}t{% trans "Cart" %} {% endblock %} 
 
 {% block content %}
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <h1> Available products</h1>
+            <h1> {% trans "Available Products" %}</h1>
             <ul>
                 {% for key, vinyl in vinyls.items %}
                 <li>
-                    id: {{ key }} -
-                    Name: {{ vinyl.name }} -
-                    Price: {{ vinyl.price }} -
+                    {% trans "ID:" %} {{ key }} -
+                    {% trans "Name:" %} {{ vinyl.name }} -
+                    {% trans "Price:" %} {{ vinyl.price }} -
                     <form method="post" action="{% url 'cart_add' key %}">
                         {% csrf_token %}
-                        <button type="submit">Add product to cart</button>
+                        <button type="submit"> {% trans "Add product to cart:" %}</button>
                     </form>
                 </li>
                 {% endfor %}
@@ -26,35 +27,33 @@
 
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <h1> Products in cart</h1>
+            <h1> {% trans "Products in Cart:" %}</h1>
             <ul>
                 {% for key, vinyl in cart_vinyls.items %}
                 <li>
-                    id: {{ key }} -
-                    Name: {{ vinyl.name }} -
-                    Price: {{ vinyl.price }} 
+                    {% trans "ID:" %} {{ key }} -
+                    {% trans "Name:" %} {{ vinyl.name }} -
+                    {% trans "Price:" %} {{ vinyl.price }} 
                 </li>
                 {% endfor %}
             </ul>
             <form method="post" action="{% url 'cart_removeAll' %}">
                 {% csrf_token %}
-                <button type="submit">Remove all products from cart</button>
+                <button type="submit">{% trans "Remove all products from cart" %}</button>
             </form>
-
+            
             {% if cart_vinyls %}
                 <ul>
                     {% for item in cart_items %}
                         <li>{{ item.vinyl.name }} - ${{ item.vinyl.price }}</li>
                     {% endfor %}
                 </ul>
-
-                <p>Total: ${{ total_price }}</p>
+                <p>{% trans "Total: $" %}{{ total_price }}</p>
 
                 {% if user.is_authenticated %}
-                    <a href="{% url 'order' %}" class="btn btn-primary">Comprar</a>
-    
+                    <a href="{% url 'order' %}" class="btn btn-primary">{% trans "Comprar" %}</a>                  
                 {% else %}
-                    <a href="{% url 'login' %}" class="btn btn-warning">Inicia sesión para comprar</a>
+                    <a href="{% url 'login' %}" class="btn btn-warning">{% trans "Inicia Sesion para Comprar" %}</a>
                 {% endif %}
 
             {% endif %}

@@ -1,10 +1,10 @@
 {% extends 'pages/base.html' %}
 {%load static%}
+{% load i18n %}
 
 {% block content %}
 <div class="confirm-container">
-    <h2 class="confirm-title">Confirmar tu pedido</h2>
-
+    <h2 class="confirm-title">{% trans "Confirmar tu pedido" %}</h2>
     {% if vinyls %}
         <ul class="confirm-list">
             {% for vinyl in vinyls %}
@@ -12,11 +12,11 @@
             {% endfor %}
         </ul>
 
-        <p class="confirm-total">Total: ${{ total_price }}</p>
+        <p class="confirm-total">{% trans "Total: $" %}{{ total_price }}</p>
 
         <form method="post" class="confirm-form">
             {% csrf_token %}
-            <button type="submit" class="confirm-btn">Realizar Pedido</button>
+            <button type="submit" class="confirm-btn">{% trans "Realizar Pedido" %}</button>
         </form>
     {% endif %}
 </div>
