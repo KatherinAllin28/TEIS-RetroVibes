@@ -75,7 +75,7 @@ class CartView(View):
         cart_vinyl_data = request.session.get('cart_vinyl_data', {})
         cart_vinyl_data[str(vinyl.id)] = vinyl.id  # Asegurar que la clave es string
         request.session['cart_vinyl_data'] = cart_vinyl_data
-
+        messages.success(request, "Tu producto ha sido agregado a tu carrito exitosamente 😉")
         return redirect('cart_index')
 
 class CartRemoveAllView(View):
