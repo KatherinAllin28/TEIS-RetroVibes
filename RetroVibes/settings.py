@@ -26,7 +26,12 @@ SECRET_KEY = 'django-insecure-e9t(r_qa$$8*x2l2-b4cqcxb2cvwk%80^=elv5z8g)28ta)0&t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://django-docker-411129597400.us-central1.run.app'
+]
+
 
 
 # Application definition
