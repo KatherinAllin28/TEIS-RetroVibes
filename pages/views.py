@@ -23,6 +23,7 @@ from rest_framework import status
 from .serializers import VinylSerializer
 import requests
 from django.contrib import messages
+from django.utils.translation import gettext_lazy as _
 
 class HomePageView(TemplateView):
     template_name = 'pages/home.html'
@@ -75,7 +76,7 @@ class CartView(View):
         cart_vinyl_data = request.session.get('cart_vinyl_data', {})
         cart_vinyl_data[str(vinyl.id)] = vinyl.id  # Asegurar que la clave es string
         request.session['cart_vinyl_data'] = cart_vinyl_data
-        messages.success(request, "Tu producto ha sido agregado a tu carrito exitosamente 😉")
+        messages.success(request, _("Tu producto ha sido agregado a tu carrito exitosamente 😉"))
         return redirect('cart_index')
 
 class CartRemoveAllView(View):
@@ -93,7 +94,7 @@ class VinylForm(forms.ModelForm):
     def clean_price(self):
         price = self.cleaned_data.get('price')
         if price is not None and price <= 0:
-            raise ValidationError("The price must be greater than zero.")
+            raise ValidationError(_("The price must be greater than zero."))
         return price
 
 class VinylCreateView(View):
@@ -190,7 +191,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user) 
-            messages.success(request, "Creación de usuario exitosa ✅")
+            messages.success(request, _("Creación de usuario exitosa ✅"))
             return redirect("profile") 
     else:
         form = RegisterForm()

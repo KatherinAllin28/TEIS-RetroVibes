@@ -1,13 +1,15 @@
 {% extends 'pages/base.html' %}
 {% block content %}
-<h1>Productos Aliados</h1>
+{% load i18n %}
+
+<h1>{% trans "Productos Aliados" %}</h1>
 <ul>
     {% for producto in productos %}
         <li>
             <a href="{{ producto.detail_url }}">{{ producto.name }}</a> - ${{ producto.price }}
         </li>
     {% empty %}
-        <li>No hay productos disponibles.</li>
+        <li>{% trans "No Hay Productos Disponibles" %}</li>
     {% endfor %}
 </ul>
 {% endblock %}

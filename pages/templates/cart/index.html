@@ -2,7 +2,7 @@
 {%load static%}
 {% load i18n %}
 
-{% block title %}t{% trans "Cart" %} {% endblock %} 
+{% block title %}t{% trans "Carrito" %} {% endblock %} 
 {% block content %}
 {% if messages %}
      {% for message in messages %}
@@ -13,16 +13,16 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <h1> {% trans "Available Products" %}</h1>
+            <h1> {% trans "Productos Disponibles" %}</h1>
             <ul>
                 {% for key, vinyl in vinyls.items %}
                 <li>
                     {% trans "ID:" %} {{ key }} -
-                    {% trans "Name:" %} {{ vinyl.name }} -
-                    {% trans "Price:" %} {{ vinyl.price }} -
+                    {% trans "Nombre:" %} {{ vinyl.name }} -
+                    {% trans "Precio:" %} {{ vinyl.price }} -
                     <form method="post" action="{% url 'cart_add' key %}">
                         {% csrf_token %}
-                        <button type="submit"> {% trans "Add product to cart:" %}</button>
+                        <button type="submit"> {% trans "Añadir producto al Carrito:" %}</button>
                     </form>
                 </li>
                 {% endfor %}
@@ -32,19 +32,19 @@
 
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <h1> {% trans "Products in Cart:" %}</h1>
+            <h1> {% trans "Productos en el Carrito:" %}</h1>
             <ul>
                 {% for key, vinyl in cart_vinyls.items %}
                 <li>
                     {% trans "ID:" %} {{ key }} -
-                    {% trans "Name:" %} {{ vinyl.name }} -
-                    {% trans "Price:" %} {{ vinyl.price }} 
+                    {% trans "Nombre:" %} {{ vinyl.name }} -
+                    {% trans "Precio:" %} {{ vinyl.price }} 
                 </li>
                 {% endfor %}
             </ul>
             <form method="post" action="{% url 'cart_removeAll' %}">
                 {% csrf_token %}
-                <button type="submit">{% trans "Remove all products from cart" %}</button>
+                <button type="submit">{% trans "Remueve todos los productos del Carrito" %}</button>
             </form>
             
             {% if cart_vinyls %}

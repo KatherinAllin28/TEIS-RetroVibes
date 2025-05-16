@@ -1,7 +1,7 @@
 {% extends 'pages/base.html' %}
 {% load i18n %}
 {%load static%}
-{% block title %} {% trans "Vinyls" %} {% endblock %}
+{% block title %} {% trans "Vinilos" %} {% endblock %}
 {% block content %}
 <div class="vinyl-card">
     <div class="vinyl-image">
@@ -13,7 +13,7 @@
         <p><strong>{% trans "Size" %}</strong> {{ vinyl.size }} inches</p>
         <p><strong>{% trans "Price" %}:</strong> ${{ vinyl.price }}</p>
         <a href="{% url 'cart_index' %}">
-            <button class="buy-btn">{% trans "Add Cart" %}</button>
+            <button class="buy-btn">{% trans "Añadir al Carrito" %}</button>
         </a>
         
     </div>
