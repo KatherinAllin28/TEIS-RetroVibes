@@ -94,7 +94,7 @@ class VinylForm(forms.ModelForm):
     def clean_price(self):
         price = self.cleaned_data.get('price')
         if price is not None and price <= 0:
-            raise ValidationError(_("The price must be greater than zero."))
+            raise ValidationError(_("El precio debe ser mayor que cero."))
         return price
 
 class VinylCreateView(View):
@@ -191,7 +191,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user) 
-            messages.success(request, _("Creación de usuario exitosa ✅"))
+            messages.success(request, ("Creación de usuario exitosa ✅"))
             return redirect("profile") 
     else:
         form = RegisterForm()

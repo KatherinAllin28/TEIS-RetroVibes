@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-16 04:38+0000\n"
+"POT-Creation-Date: 2025-05-16 07:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
 "1 : 2;\n"
+
+#: RetroVibes/settings.py:113
+msgid "Español"
+msgstr ""
+
+#: RetroVibes/settings.py:114
+msgid "Inglés"
+msgstr ""
+
+#: RetroVibes/settings.py:115
+msgid "Francés"
+msgstr ""
+
+#: pages/templates/JSON/productos_aliados.html:5
+msgid "Productos Aliados"
+msgstr ""
+
+#: pages/templates/JSON/productos_aliados.html:12
+msgid "No Hay Productos Disponibles"
+msgstr ""
+
 #: pages/templates/accounts/login.html:6
 msgid "Iniciar Sesión"
 msgstr ""
@@ -26,53 +47,52 @@ msgstr ""
 msgid "Ingresar"
 msgstr ""
 
-#: pages/templates/accounts/profile.html:24
+#: pages/templates/accounts/profile.html:42
 msgid "Cerrar Sesión"
 msgstr ""
 
 #: pages/templates/cart/index.html:5 pages/templates/pages/base.html:33
-#: pages/templates/pages/base.html:47
-msgid "Cart"
+msgid "Carrito"
 msgstr ""
 
-#: pages/templates/cart/index.html:11
-msgid "Available Products"
+#: pages/templates/cart/index.html:16
+msgid "Productos Disponibles"
 msgstr ""
 
-#: pages/templates/cart/index.html:15 pages/templates/cart/index.html:34
+#: pages/templates/cart/index.html:20 pages/templates/cart/index.html:39
 msgid "ID:"
 msgstr ""
 
-#: pages/templates/cart/index.html:16 pages/templates/cart/index.html:35
-msgid "Name:"
+#: pages/templates/cart/index.html:21 pages/templates/cart/index.html:40
+msgid "Nombre:"
 msgstr ""
 
-#: pages/templates/cart/index.html:17 pages/templates/cart/index.html:36
-#: pages/templates/vinyl/create.html:41
-msgid "Price:"
+#: pages/templates/cart/index.html:22 pages/templates/cart/index.html:41
+#: pages/templates/vinyl/create.html:41 pages/templates/vinyl/show.html:14
+msgid "Precio:"
 msgstr ""
 
-#: pages/templates/cart/index.html:20
-msgid "Add product to cart:"
+#: pages/templates/cart/index.html:25
+msgid "Añadir producto al Carrito:"
 msgstr ""
 
-#: pages/templates/cart/index.html:30
-msgid "Products in Cart:"
+#: pages/templates/cart/index.html:35
+msgid "Productos en el Carrito:"
 msgstr ""
 
-#: pages/templates/cart/index.html:42
-msgid "Remove all products from cart"
+#: pages/templates/cart/index.html:47
+msgid "Remueve todos los productos del Carrito"
 msgstr ""
 
-#: pages/templates/cart/index.html:51 pages/templates/order/index.html:15
+#: pages/templates/cart/index.html:56 pages/templates/order/index.html:15
 msgid "Total: $"
 msgstr ""
 
-#: pages/templates/cart/index.html:54
+#: pages/templates/cart/index.html:59
 msgid "Comprar"
 msgstr ""
 
-#: pages/templates/cart/index.html:56
+#: pages/templates/cart/index.html:61
 msgid "Inicia Sesion para Comprar"
 msgstr ""
 
@@ -85,10 +105,18 @@ msgid "Realizar Pedido"
 msgstr ""
 
 #: pages/templates/pages/base.html:10
-msgid "Online Store"
+msgid "Tienda en Linea"
 msgstr ""
 
-#: pages/templates/pages/base.html:38 pages/templates/pages/base.html:48
+#: pages/templates/pages/base.html:38
+msgid "Perfil"
+msgstr ""
+
+#: pages/templates/pages/base.html:56
+msgid "Cart"
+msgstr ""
+
+#: pages/templates/pages/base.html:57
 msgid "Profile"
 msgstr ""
 
@@ -97,11 +125,27 @@ msgid "Home"
 msgstr ""
 
 #: pages/templates/pages/home.html:28
-msgid "Buy your own vinyl"
+msgid "Compra tu Vinilo Original"
+msgstr ""
+
+#: pages/templates/pdf/receipt_template.html:13
+msgid "Recibo de Compra - Pedido #"
+msgstr ""
+
+#: pages/templates/pdf/receipt_template.html:15
+msgid "Estado:"
+msgstr ""
+
+#: pages/templates/pdf/receipt_template.html:16
+msgid "Seguimiento:"
+msgstr ""
+
+#: pages/templates/pdf/receipt_template.html:17
+msgid "Entrega estimada:"
 msgstr ""
 
 #: pages/templates/registration/login.html:10
-msgid "Login"
+msgid "Ingreso"
 msgstr ""
 
 #: pages/templates/registration/login.html:17
@@ -121,7 +165,7 @@ msgid "Regístrate aquí"
 msgstr ""
 
 #: pages/templates/registration/register.html:11
-msgid "Register"
+msgid "Registro"
 msgstr ""
 
 #: pages/templates/registration/register.html:17
@@ -169,16 +213,16 @@ msgstr ""
 msgid "Descargar recibo PDF"
 msgstr ""
 
-#: pages/templates/vinyl/create.html:5 pages/templates/vinyl/create.html:50
-msgid "Create Vinyl"
+#: pages/templates/vinyl/create.html:5
+msgid "Crear vinilo"
 msgstr ""
 
 #: pages/templates/vinyl/create.html:9
-msgid "Create a New Vinyl"
+msgid "Crea un vinilo nuevo"
 msgstr ""
 
 #: pages/templates/vinyl/create.html:15
-msgid "Name"
+msgid "Nombre"
 msgstr ""
 
 #: pages/templates/vinyl/create.html:20
@@ -186,49 +230,61 @@ msgid "Playlist"
 msgstr ""
 
 #: pages/templates/vinyl/create.html:22
-msgid "Open this select menu"
+msgid "Abre este menu"
 msgstr ""
 
-#: pages/templates/vinyl/create.html:31 pages/templates/vinyl/show.html:13
-msgid "Size"
+#: pages/templates/vinyl/create.html:31
+msgid "Tamaño"
 msgstr ""
 
 #: pages/templates/vinyl/create.html:36
-msgid "Colour"
+msgid "Color"
 msgstr ""
 
 #: pages/templates/vinyl/create.html:46
-msgid "Image"
+msgid "Imagen"
+msgstr ""
+
+#: pages/templates/vinyl/create.html:50
+msgid "Crear Vinilo"
 msgstr ""
 
 #: pages/templates/vinyl/create.html:54
-msgid "Back to List"
+msgid "Regresa a la lista"
 msgstr ""
 
-#: pages/templates/vinyl/index.html:3
-msgid "Options"
+#: pages/templates/vinyl/index.html:4
+msgid "Opciones"
 msgstr ""
 
-#: pages/templates/vinyl/index.html:17
-msgid "Create my own vinyl"
+#: pages/templates/vinyl/index.html:18
+msgid "Crear mi propio Vinilo"
 msgstr ""
 
-#: pages/templates/vinyl/index.html:33
-msgid "Search a vinyl"
+#: pages/templates/vinyl/index.html:34
+msgid "Buscar un vinilo"
 msgstr ""
 
 #: pages/templates/vinyl/list.html:4 pages/templates/vinyl/show.html:4
-msgid "Vinyls"
+msgid "Vinilos"
 msgstr ""
 
 #: pages/templates/vinyl/show.html:12
 msgid "Color:"
 msgstr ""
 
-#: pages/templates/vinyl/show.html:14
-msgid "Price"
+#: pages/templates/vinyl/show.html:13
+msgid "Tamaño:"
 msgstr ""
 
 #: pages/templates/vinyl/show.html:16
-msgid "Add Cart"
+msgid "Añadir al Carrito"
+msgstr ""
+
+#: pages/views.py:79
+msgid "Tu producto ha sido agregado a tu carrito exitosamente 😉"
+msgstr ""
+
+#: pages/views.py:97
+msgid "El precio debe ser mayor que cero."
 msgstr ""

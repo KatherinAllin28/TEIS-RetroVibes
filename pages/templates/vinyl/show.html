@@ -10,8 +10,8 @@
     <div class="vinyl-details">
         <h2>{{ vinyl.name }}</h2>
         <p><strong>{% trans "Color:" %}</strong> {{ vinyl.colour }}</p>
-        <p><strong>{% trans "Size" %}</strong> {{ vinyl.size }} inches</p>
-        <p><strong>{% trans "Price" %}:</strong> ${{ vinyl.price }}</p>
+        <p><strong>{% trans "Tamaño:" %}</strong> {{ vinyl.size }} inches</p>
+        <p><strong>{% trans "Precio:" %}:</strong> ${{ vinyl.price }}</p>
         <a href="{% url 'cart_index' %}">
             <button class="buy-btn">{% trans "Añadir al Carrito" %}</button>
         </a>
